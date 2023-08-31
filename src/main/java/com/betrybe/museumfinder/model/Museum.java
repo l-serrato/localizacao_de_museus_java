@@ -1,5 +1,8 @@
 package com.betrybe.museumfinder.model;
 
+/**
+ * Class.
+ */
 public class Museum {
 
   /**
