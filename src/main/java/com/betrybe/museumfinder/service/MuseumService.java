@@ -15,10 +15,12 @@ import org.springframework.stereotype.Service;
 public class MuseumService implements MuseumServiceInterface {
   MuseumFakeDatabase museumFakeDatabase;
   public MuseumService(MuseumFakeDatabase museumFakeDatabase) {
+
     this.museumFakeDatabase = museumFakeDatabase;
   }
   @Override
   public Museum getClosestMuseum(Coordinate coordinate, Double maxDistance) {
+
     double lon = coordinate.longitude();
     double lat = coordinate.latitude();
 
