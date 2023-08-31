@@ -5,8 +5,9 @@ import com.betrybe.museumfinder.exception.InvalidCoordinateException;
 import com.betrybe.museumfinder.model.Coordinate;
 import com.betrybe.museumfinder.model.Museum;
 import com.betrybe.museumfinder.util.CoordinateUtil;
-import org.springframework.stereotype.Service;
 import com.betrybe.museumfinder.exception.MuseumNotFoundException;
+import org.springframework.stereotype.Service;
+
 
 /**
  * Class.
