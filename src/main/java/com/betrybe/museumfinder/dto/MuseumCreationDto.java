@@ -4,13 +4,5 @@ import com.betrybe.museumfinder.model.Coordinate;
 /**
  * Record.
  */
-public record MuseumCreationDto(
-
-    String name,
-    String description,
-    String address,
-    String collectionType,
-    String subject,
-    String url,
-    Coordinate coordinate
-) { }
+public record MuseumCreationDto(String name, String description, String address, String collectionType, String subject, String url, Coordinate coordinate) {
+}
