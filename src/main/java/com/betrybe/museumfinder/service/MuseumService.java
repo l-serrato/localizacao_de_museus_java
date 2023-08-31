@@ -12,45 +12,42 @@ import org.springframework.stereotype.Service;
  * Class.
  */
 @Service
-  public class MuseumService implements MuseumServiceInterface {
-
-    MuseumFakeDatabase museumFakeDatabase;
-
-    public MuseumService(MuseumFakeDatabase museumFakeDatabase) {
-      this.museumFakeDatabase = museumFakeDatabase;
-    }
-
-    @Override
-    public Museum getClosestMuseum(Coordinate coordinate, Double maxDistance) {
-      double lon = coordinate.longitude();
-      double lat = coordinate.latitude();
-
-      Coordinate coor = new Coordinate(lat, lon);
-
-      if (!CoordinateUtil.isCoordinateValid(coor)) {
-        throw  new InvalidCoordinateException();
-      }
-
-      return museumFakeDatabase.getClosestMuseum(coordinate, maxDistance)
-          .orElseThrow(MuseumNotFoundException::new);
-    }
-
-    @Override
-    public Museum createMuseum(Museum museum) {
-      double lon = museum.getCoordinate().longitude();
-      double lat = museum.getCoordinate().latitude();
-
-      Coordinate coor = new Coordinate(lat, lon);
-
-      if (!CoordinateUtil.isCoordinateValid(coor)) {
-        throw  new InvalidCoordinateException();
-      }
-
-      return museumFakeDatabase.saveMuseum(museum);
-    }
-
-    @Override
-    public Museum getMuseum(Long id) {
-      return null;
-    }
+public class MuseumService implements MuseumServiceInterface {
+  MuseumFakeDatabase museumFakeDatabase;
+  public MuseumService(MuseumFakeDatabase museumFakeDatabase) {
+    this.museumFakeDatabase = museumFakeDatabase;
   }
+  @Override
+  public Museum getClosestMuseum(Coordinate coordinate, Double maxDistance) {
+    double lon = coordinate.longitude();
+    double lat = coordinate.latitude();
+
+    Coordinate coor = new Coordinate(lat, lon);
+
+    if (!CoordinateUtil.isCoordinateValid(coor)) {
+      throw  new InvalidCoordinateException();
+    }
+
+    return museumFakeDatabase.getClosestMuseum(coordinate, maxDistance)
+        .orElseThrow(MuseumNotFoundException::new);
+  }
+
+  @Override
+  public Museum createMuseum(Museum museum) {
+    double lon = museum.getCoordinate().longitude();
+    double lat = museum.getCoordinate().latitude();
+
+    Coordinate coor = new Coordinate(lat, lon);
+
+    if (!CoordinateUtil.isCoordinateValid(coor)) {
+      throw  new InvalidCoordinateException();
+    }
+
+    return museumFakeDatabase.saveMuseum(museum);
+  }
+
+  @Override
+  public Museum getMuseum(Long id) {
+    return null;
+  }
+}
