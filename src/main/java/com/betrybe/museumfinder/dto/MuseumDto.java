@@ -4,6 +4,7 @@ import com.betrybe.museumfinder.model.Coordinate;
 
 /**
  * Javadoc.
+ * yep.
  */
 public record MuseumDto(
     Long id,
